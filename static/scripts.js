@@ -9,6 +9,7 @@ var companyQuery = "tubemogul"
 
 
 function gdAPICompany(){
+	console.log(GDPartner);
 	apiCall="http://api.glassdoor.com/api/api.htm?t.p="+GDPartner+"&t.k="+GDKey+"&userip="+userIP+"&useragent="+userAgent+"&format=json&v=1&action=employers&q="+companyQuery
 	console.log(apiCall);
 	$.ajax({
@@ -17,8 +18,8 @@ function gdAPICompany(){
 			format: 'json'
 		},
 		dataType: 'jsonp',
-		success: function(data.response){
-			console.log(data);
+		success: function(data){
+			console.log(data.response);
 		},
 		error: function(){
 			console.log("didn't work");
@@ -28,3 +29,7 @@ function gdAPICompany(){
 };
 
 gdAPICompany();
+
+function onLILogin(){
+	alert("logging in");
+}
