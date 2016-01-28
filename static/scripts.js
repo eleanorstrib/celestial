@@ -28,7 +28,7 @@ function gdAPICompany(){
 	})
 };
 
-gdAPICompany();
+// gdAPICompany();
 
 // LINKEDIN AUTHENTICATION
 // Setup an event listener to make an API call once auth is complete
