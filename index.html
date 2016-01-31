@@ -1,49 +1,60 @@
 <!DOCTYPE html>
 <head>
 	<title>Seleste - company star ratings and more</title>
-		<!-- Facebook login -->
-	<script>
-	//   window.fbAsyncInit = function() {
-	//     FB.init({
-	//       appId      : FBAppID,
-	//       xfbml      : true,
-	//       version    : 'v2.5'
-	//     });
-	//   };
-
-	//   (function(d, s, id){
-	//      var js, fjs = d.getElementsByTagName(s)[0];
-	//      if (d.getElementById(id)) {return;}
-	//      js = d.createElement(s); js.id = id;
-	//      js.src = "//connect.facebook.net/en_US/sdk.js";
-	//      fjs.parentNode.insertBefore(js, fjs);
-	//    }(document, 'script', 'facebook-jssdk'));
-	// </script>
-
-	<!--LinkedIn login-->
-	<script type="text/javascript" src="//platform.linkedin.com/in.js">
-    api_key:   LIClientID
-    onLoad:    onLinkedInLoad
-    authorize: true
-    lang:      en_US
-	</script>
-	
-</head>
-
-<body>
-	
-	<h3> HELLO</h3>
-	<script type="in/Login"></script>
-
-	<!--SCRIPTS AND LIBRARIES-->
+	<meta charset="UTF-8">
+		<!--SCRIPTS AND LIBRARIES-->
 		<!--Angular 1.3-->
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
-		
 		<!--D3-->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.14/d3.js"></script>
 		<!--jQuery-->
 		<script src="https://code.jquery.com/jquery-2.2.0.js"></script>
-		<!--custom script files-->
+	<!--custom script files-->
 		<script type="text/javascript" src="static/secret.js"></script>
 		<script type="text/javascript" src="static/scripts.js"></script>
+		<script type="text/javascript" src="static/fblogin.js"></script>
+		<script type="text/javascript" src="static/lilogin.js"></script>
+		<script type="text/javascript" src="static/gdapicall.js"></script>
+	<!-- Facebook login -->
+	<script>
+	  window.fbAsyncInit = function() {
+	    FB.init({
+	      appId      : FBAppID,
+	      xfbml      : true,
+	      version    : 'v2.5'
+	    });
+	  };
+
+	  (function(d, s, id){
+	     var js, fjs = d.getElementsByTagName(s)[0];
+	     if (d.getElementById(id)) {return;}
+	     js = d.createElement(s); js.id = id;
+	     js.src = "//connect.facebook.net/en_US/sdk.js";
+	     fjs.parentNode.insertBefore(js, fjs);
+	   }(document, 'script', 'facebook-jssdk'));
+	// </script>
+
+	<!--LinkedIn login-->
+
+		// <script type="text/javascript" src="//platform.linkedin.com/in.js">
+		//     api_key: LIClientID
+		//     authorize: true
+		//     onLoad: onLinkedInLoad
+		// </script>
+
+	
+</head>
+
+<body>
+	<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+	</fb:login-button>
+	<div id="status">
+	</div>
+	<h3> HELLO</h3>
+	<div id="glassdoor"></div>
+
+<a href='https://www.glassdoor.com/index.htm'>powered by <img src='https://www.glassdoor.com/static/img/api/glassdoor_logo_80.png' title='Job Search' /></a>
+
+
+		
 </body>
