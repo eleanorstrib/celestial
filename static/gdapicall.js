@@ -7,7 +7,7 @@ var userIP="localhost:8000"
 
 
 function gdAPICompany(){
-	apiCall="http://api.glassdoor.com/api/api.htm?t.p="+GDPartner+"&t.k="+GDKey+"&userip="+userIP+"&useragent="+userAgent+"&format=json&v=1&action=jobs-prog&countryId=1&jobTitle=product%20manager"
+	apiCall="http://api.glassdoor.com/api/api.htm?t.p="+GDPartner+"&t.k="+GDKey+"&userip="+userIP+"&useragent="+userAgent+"&format=json&v=1&action=employers&q=brightroll"
 	console.log(apiCall);
 	$.ajax({
 		url: apiCall,
