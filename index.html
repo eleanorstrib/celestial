@@ -6,6 +6,7 @@
 		<!--SCRIPTS AND LIBRARIES-->
 		<!--Angular-->
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-route.js"></script>
 		<!--D3-->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.14/d3.js"></script>
 		<!--jQuery-->
@@ -84,8 +85,10 @@
   </div><!-- /.container-fluid -->
 </nav>
 
+<div id="main">
 <!--show partials-->
-<div ng-controller="mainCtrl">
+	<div ng-view>
+	</div>
 </div>
 	
 <footer>
