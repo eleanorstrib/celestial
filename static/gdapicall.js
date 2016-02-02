@@ -27,4 +27,4 @@ function gdAPICompany(){
 	})
 };
 
-gdAPICompany();
+// gdAPICompany();
