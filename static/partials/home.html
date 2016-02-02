@@ -2,13 +2,20 @@
 <h3> {{ message }}</h3>
 
 	Rough draft of the form
-	<form action="">
-		<label for="company1">company one</label><br />
-			<input type="text" name="company1">
-		<label for="company2">company 2</label><br />
-			<input type="text" name="company2">
-		<label for="company3">company 3</label><br />
-			<input type="text" name="company3">
-		<input type="submit">
-	</form>
+	<form ng-submit="homeCtrl.submit()" method="post" name="threeCompanies">
+		<input type="text"
+			ng-model="company1"
+			required
+			ng-minlength="2">
+		<input type="text"
+			ng-model="company2"
+			ng-minlength="2">
+		<input type="text"
+			ng-model="company3"
+			ng-minlength="2">
+		<input type="submit"
+			value="go">
 
+	</form>
+Company 1: {{company1}}
+{{ message }}
