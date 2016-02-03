@@ -10,12 +10,19 @@
 			ng-model="company1"
 			required
 			ng-minlength="2">
+		<span ng-show="companySearchForm.$error.required">
+		Enter at least two companies to compare.</span>
+		
 		<label>company #2</label><br />
 		<input type="text"
 			class="form-control"
 			name="company2"
 			ng-model="company2"
+			required
 			ng-minlength="2">
+		<span ng-show="companySearchForm.$error.required">
+			Enter at least two companies to compare.</span>
+		
 		<label>company #3</label>
 		<input type="text"
 			class="form-control"
@@ -24,7 +31,7 @@
 			ng-minlength="2">
 		<input type="submit"
 			ng-click="submit()"
-			ng-disabled="companySearch.$invalid"></button>
+			ng-disabled="companySearchForm.$invalid"></button>
 		<button ng-click="reset()">reset</button>
 	</form>
 

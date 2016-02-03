@@ -18,8 +18,8 @@ var app = angular.module('seleste', ['ngRoute']);
 			$scope.company2 = '';
 			$scope.company3 = '';
 		}
-		
+
 		$scope.submit = function() {
-			console.log('worked');
+			console.log($scope.company1);
 		};
 	}]);
