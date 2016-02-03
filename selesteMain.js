@@ -8,13 +8,18 @@ var app = angular.module('seleste', ['ngRoute']);
 		});
 	});
 	
-	app.controller('homeCtrl',['$scope', function($scope) {
-			var self=this;
-			$scope.company1 = ''
-			$scope.company2 = ''
-			$scope.company3 =''
-			self.submit = function(){
-				$scope.message = 'looks good';
-				console.log(this.company1 + this.company2 + this.company3);
-			};
-		}]);
+	app.controller('homeCtrl',['$scope',function($scope) {
+		$scope.company1 = '';
+		$scope.company2 = '';
+		$scope.company3 = '';
+
+		$scope.reset = function(){
+			$scope.company1 = '';
+			$scope.company2 = '';
+			$scope.company3 = '';
+		}
+		
+		$scope.submit = function() {
+			console.log('worked');
+		};
+	}]);

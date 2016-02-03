@@ -2,20 +2,30 @@
 <h3> {{ message }}</h3>
 
 	Rough draft of the form
-	<form ng-submit="homeCtrl.submit()" method="post" name="threeCompanies">
+	<form ng-controller="homeCtrl" name="companySearchForm" no validate>
+		<label>company #1</label><br />
 		<input type="text"
+			class="form-control"
+			name="company1"
 			ng-model="company1"
 			required
 			ng-minlength="2">
+		<label>company #2</label><br />
 		<input type="text"
+			class="form-control"
+			name="company2"
 			ng-model="company2"
 			ng-minlength="2">
+		<label>company #3</label>
 		<input type="text"
+			class="form-control"
+			name="company3"
 			ng-model="company3"
 			ng-minlength="2">
 		<input type="submit"
-			value="go">
-
+			ng-click="submit()"
+			ng-disabled="companySearch.$invalid"></button>
+		<button ng-click="reset()">reset</button>
 	</form>
-Company 1: {{company1}}
-{{ message }}
+
+
