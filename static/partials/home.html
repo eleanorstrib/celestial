@@ -1,8 +1,10 @@
 
-<h3> {{ message }}</h3>
+<div class="container-fluid">
+<div class="row">
+<div class="col-md-1"></div>
 
-	Rough draft of the form
-	<form ng-controller="homeCtrl" name="companySearchForm" no validate>
+<form ng-controller="homeCtrl" name="companySearchForm" no validate>
+	<div class="col-md-3">
 		<label>company #1</label><br />
 		<input type="text"
 			class="form-control"
@@ -10,9 +12,11 @@
 			ng-model="company1"
 			required
 			ng-minlength="2">
-		<span ng-show="companySearchForm.$error.required">
-		Enter at least two companies to compare.</span>
-		
+	</div>
+
+	<div class="col-md-1"></div>
+
+	<div class="col-md-3">
 		<label>company #2</label><br />
 		<input type="text"
 			class="form-control"
@@ -22,17 +26,53 @@
 			ng-minlength="2">
 		<span ng-show="companySearchForm.$error.required">
 			Enter at least two companies to compare.</span>
-		
+	</div>
+
+	<div class="col-md-1"></div>
+
+	<div class="col-md-3">
 		<label>company #3</label>
 		<input type="text"
 			class="form-control"
 			name="company3"
 			ng-model="company3"
 			ng-minlength="2">
+	</div>
+	<div class="col-md-1"></div>
+</div>
+
+<div class="row">
 		<input type="submit"
 			ng-click="submit()"
 			ng-disabled="companySearchForm.$invalid"></button>
 		<button ng-click="reset()">reset</button>
-	</form>
+</div>
+
+</form>
 
 
+<!-- Trigger the modal with a button -->
+	<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#queryNoMatchModal">Open Modal</button>
+
+	<!-- This modal appears automatically when a search term does not
+	match a company name exactly in the Glassdoor API -->
+	<div id="queryNoMatchModal" class="modal fade" role="dialog">
+	  <div class="modal-dialog">
+
+	    <!-- Modal content-->
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal">&times;</button>
+	        <h4 class="modal-title">Can you be more specific?</h4>
+	      </div>
+	      <div class="modal-body">
+	        <p>Your query for {{ company }} didn't exactly match a company name in Glassdoor.  Did you mean one of these?</p>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	      </div>
+	    </div>
+
+	  </div>
+	</div>
+</div>

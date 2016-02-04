@@ -39,6 +39,7 @@ function gdAPICompany(company){
 };
 
 function clarifyQuery(company) {
+	$('#queryNoMatchModal').modal('show');
 	console.log("search query not an exact match for " + company);
 };
 
