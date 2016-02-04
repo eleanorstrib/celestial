@@ -1,10 +1,8 @@
 
 <div class="container-fluid">
-<div class="row">
-<div class="col-md-1"></div>
 
-<form ng-controller="homeCtrl" name="companySearchForm" no validate>
-	<div class="col-md-3">
+	Rough draft of the form
+	<form ng-controller="homeCtrl" name="companySearchForm" no validate>
 		<label>company #1</label><br />
 		<input type="text"
 			class="form-control"
@@ -12,11 +10,9 @@
 			ng-model="company1"
 			required
 			ng-minlength="2">
-	</div>
-
-	<div class="col-md-1"></div>
-
-	<div class="col-md-3">
+		<span ng-show="companySearchForm.$error.required">
+		Enter at least two companies to compare.</span>
+		
 		<label>company #2</label><br />
 		<input type="text"
 			class="form-control"
@@ -26,29 +22,18 @@
 			ng-minlength="2">
 		<span ng-show="companySearchForm.$error.required">
 			Enter at least two companies to compare.</span>
-	</div>
-
-	<div class="col-md-1"></div>
-
-	<div class="col-md-3">
+		
 		<label>company #3</label>
 		<input type="text"
 			class="form-control"
 			name="company3"
 			ng-model="company3"
 			ng-minlength="2">
-	</div>
-	<div class="col-md-1"></div>
-</div>
-
-<div class="row">
 		<input type="submit"
 			ng-click="submit()"
 			ng-disabled="companySearchForm.$invalid"></button>
 		<button ng-click="reset()">reset</button>
-</div>
-
-</form>
+	</form>
 
 
 <!-- Trigger the modal with a button -->

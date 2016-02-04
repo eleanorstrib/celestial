@@ -6,9 +6,14 @@ var app = angular.module('seleste', ['ngRoute']);
 			templateUrl: 'static/partials/home.html',
 			controller: 'homeCtrl'
 		});
+		// .when('/about', {
+		// 	templateUrl:'static/partials/about.html',
+		// 	contoller: 'aboutCtrl'
+		// });
 	});
 	
 	app.controller('homeCtrl',['$scope',function($scope) {
+		$scope.pageClass = 'homePage';
 		$scope.company1 = '';
 		$scope.company2 = '';
 		$scope.company3 = '';
@@ -26,4 +31,8 @@ var app = angular.module('seleste', ['ngRoute']);
 			}
 		};
 
+	}]);
+
+	app.controller('aboutCtrl', ['$scope', function($scope) {
+		$scope.pageClass = 'aboutPage';
 	}]);

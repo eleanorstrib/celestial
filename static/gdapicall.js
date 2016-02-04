@@ -27,7 +27,7 @@ function gdAPICompany(company){
 					gdAPICompanyResults.push(gdJSONResult);
 					console.log('gdAPICompanyResults updated!');
 				} else {
-					clarifyQuery(company);
+					clarifyQuery(company, gdJSONResult);
 				}
 			},
 			error: function(){
@@ -38,9 +38,11 @@ function gdAPICompany(company){
 	} 
 };
 
-function clarifyQuery(company) {
+function clarifyQuery(company, gdAPICompanyResults) {
 	$('#queryNoMatchModal').modal('show');
 	console.log("search query not an exact match for " + company);
+	console.log(" testing" + company + gdAPICompanyResults);
+	$('queryNoMatchModal, modal-body').html(gdAPICompanyResults);
 };
 
 
