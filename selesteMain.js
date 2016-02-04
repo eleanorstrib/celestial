@@ -21,11 +21,9 @@ var app = angular.module('seleste', ['ngRoute']);
 
 		$scope.submit = function() {
 			var companyArray = [$scope.company1, $scope.company2, $scope.company3];
-			for (i=0; i<companyArray.length; i++){
-				if (companyArray[i] !== ""){
-					gdAPICompany(companyArray[i]);
-				};
-			};
-
+			for (i=0; i<companyArray.length; i++) {
+				gdAPICompany(companyArray[i]);
+			}
 		};
+
 	}]);
