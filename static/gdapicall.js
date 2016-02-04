@@ -6,9 +6,9 @@ var userAgent ="chrome"
 var userIP="localhost:8000"
 
 
-function gdAPICompany(){
-	apiCall="http://api.glassdoor.com/api/api.htm?t.p="+GDPartner+"&t.k="+GDKey+"&userip="+userIP+"&useragent="+userAgent+"&format=json&v=1&action=employers&q=brightroll"
-	console.log(apiCall);
+function gdAPICompany(company){
+	apiCall="http://api.glassdoor.com/api/api.htm?t.p="+GDPartner+"&t.k="+GDKey+"&userip="+userIP+"&useragent="+userAgent+"&format=json&v=1&action=employers&q="+company
+	console.log(company);
 	$.ajax({
 		url: apiCall,
 		data: {
@@ -18,7 +18,6 @@ function gdAPICompany(){
 		success: function(data){
 			var gd1 = JSON.stringify(data.response);
 			console.log(gd1);
-			document.getElementById("glassdoor").innerHTML=gd1;
 		},
 		error: function(){
 			console.log("didn't work");
@@ -27,4 +26,4 @@ function gdAPICompany(){
 	})
 };
 
-// gdAPICompany();
+
