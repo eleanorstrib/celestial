@@ -54,9 +54,9 @@
 	      <div class="modal-body">
 	        <p>Your query for {{ coName }} wasn't an exact match with any company in the Glassdoor API.<br />
 	        Are any of these companies a match?</p>
-	        <form method="POST" name="clarifyQueryForm" ng-repeat="name in gdAPIData.name" novalidate>
-	        	<input type="radio" ng-model="gdAPIData.name" name="gdAPIData.name">
-	        <form>
+	       
+	        	<li ng-repeat="(name, employer) in gdAPIData">{{name}}: {{employer.name}}</li>
+	        	
 	        </p>
 	      </div>
 	      <div class="modal-footer">

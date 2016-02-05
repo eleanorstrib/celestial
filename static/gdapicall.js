@@ -37,11 +37,10 @@
 // 	} 
 // };
 
-function clarifyQuery(company, gdAPICompanyResults) {
+function clarifyQuery(company, gdAPIData) {
 	$('#queryNoMatchModal').modal('show');
 	console.log("search query not an exact match for " + company);
-	console.log(" testing" + company + gdAPICompanyResults);
-	$('queryNoMatchModal, modal-body').html(gdAPICompanyResults);
+	console.log(" testing" + company + gdAPIData);
 };
 
 
