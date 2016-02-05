@@ -46,6 +46,7 @@ var app = angular.module('seleste', ['ngRoute', 'ngAnimate']);
 							console.log(gdAPICompanyResults);
 						} else {
 							clarifyQuery($scope.coName, $scope.gdAPIData);
+							console.log(gdAPIData + coName);
 						}
 				});
 				// if there is only one employer listed, it's an exact match
