@@ -1,4 +1,6 @@
 var gdAPICompanyResults = []
+var userIP = "localhost:8000"
+var userAgent ="chrome"
 
 var app = angular.module('seleste', ['ngRoute', 'ngAnimate']);
 
@@ -38,14 +40,13 @@ var app = angular.module('seleste', ['ngRoute', 'ngAnimate']);
 			// call the api
 				$http.get("http://api.glassdoor.com/api/api.htm?t.p="+GDPartner+"&t.k="+GDKey+"&userip="+userIP + "&useragent="+ userAgent +"&format=json&v=1&action=employers&q=" + coName)
 					 .then(function(response){
-					 	$scope.gdAPIData = response.data;
-					 	console.log(typeof response.data);
-					 	console.log(response.data);
-					 // 	if (gdAPIData.employers.length === 1){
-						// 	gdAPICompanyResults.push(gdAPIData);
-						// } else {
-						// 	clarifyQuery(coName, gdAPICompanyResults);
-						// }
+					 	$scope.gdAPIData = response.data.response.employers;
+					 	if ($scope.gdAPIData.length === 1){
+							gdAPICompanyResults.push($scope.gdAPIData);
+							console.log(gdAPICompanyResults);
+						} else {
+							clarifyQuery(coName, gdAPICompanyResults);
+						}
 				});
 				// if there is only one employer listed, it's an exact match
 				
