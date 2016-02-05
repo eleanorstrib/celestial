@@ -1,9 +1,9 @@
 
-
+<div ng-controller= "homeCtrl">
 <div class="container-fluid">
 {{ companyData }}
 	Rough draft of the form
-	<form ng-controller="homeCtrl" name="companySearchForm" no validate>
+	<form name="companySearchForm" no validate>
 		<label>company #1</label><br />
 		<input type="text"
 			class="form-control"
@@ -52,8 +52,11 @@
 	        <h4 class="modal-title">Can you be more specific?</h4>
 	      </div>
 	      <div class="modal-body">
-	        <p>Your query for {{ company }} didn't exactly match a company name in Glassdoor.  Did you mean one of these?
-	        <form><form>
+	        <p>Your query for {{ coName }} wasn't an exact match with any company in the Glassdoor API.<br />
+	        Are any of these companies a match?</p>
+	        <form method="POST" name="clarifyQueryForm" ng-repeat="name in gdAPIData.name" novalidate>
+	        	<input type="radio" ng-model="gdAPIData.name" name="gdAPIData.name">
+	        <form>
 	        </p>
 	      </div>
 	      <div class="modal-footer">
@@ -63,4 +66,5 @@
 
 	  </div>
 	</div>
+</div>
 </div>

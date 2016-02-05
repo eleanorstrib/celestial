@@ -36,16 +36,16 @@ var app = angular.module('seleste', ['ngRoute', 'ngAnimate']);
 			console.log(companyArray);
 			// cycle through the items
 			for (i=0; i<companyArray.length; i++) {
-				var coName = companyArray[i];
+				$scope.coName = companyArray[i];
 			// call the api
-				$http.get("http://api.glassdoor.com/api/api.htm?t.p="+GDPartner+"&t.k="+GDKey+"&userip="+userIP + "&useragent="+ userAgent +"&format=json&v=1&action=employers&q=" + coName)
+				$http.get("http://api.glassdoor.com/api/api.htm?t.p="+GDPartner+"&t.k="+GDKey+"&userip="+userIP + "&useragent="+ userAgent +"&format=json&v=1&action=employers&q=" + $scope.coName)
 					 .then(function(response){
 					 	$scope.gdAPIData = response.data.response.employers;
 					 	if ($scope.gdAPIData.length === 1){
 							gdAPICompanyResults.push($scope.gdAPIData);
 							console.log(gdAPICompanyResults);
 						} else {
-							clarifyQuery(coName, gdAPICompanyResults);
+							clarifyQuery($scope.coName, gdAPICompanyResults);
 						}
 				});
 				// if there is only one employer listed, it's an exact match
