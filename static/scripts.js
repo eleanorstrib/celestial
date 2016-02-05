@@ -1,4 +1,4 @@
 $(document).ready(function(){
-	$('#myModal').modal({ show: false})
+	$('#queryNoMatchModal').modal({ show: false})
 });
 

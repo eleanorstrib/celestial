@@ -1,6 +1,7 @@
 
-<div class="container-fluid">
 
+<div class="container-fluid">
+{{ companyData }}
 	Rough draft of the form
 	<form ng-controller="homeCtrl" name="companySearchForm" no validate>
 		<label>company #1</label><br />
@@ -9,7 +10,7 @@
 			name="company1"
 			ng-model="company1"
 			required
-			ng-minlength="2">
+			ng-minlength="3">
 		<span ng-show="companySearchForm.$error.required">
 		Enter at least two companies to compare.</span>
 		
@@ -19,7 +20,7 @@
 			name="company2"
 			ng-model="company2"
 			required
-			ng-minlength="2">
+			ng-minlength="3">
 		<span ng-show="companySearchForm.$error.required">
 			Enter at least two companies to compare.</span>
 		
@@ -39,7 +40,7 @@
 <!-- Trigger the modal with a button -->
 	<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#queryNoMatchModal">Open Modal</button>
 
-	<!-- This modal appears automatically when a search term does not
+	<!-- This modal appears automatically when a search term does n
 	match a company name exactly in the Glassdoor API -->
 	<div id="queryNoMatchModal" class="modal fade" role="dialog">
 	  <div class="modal-dialog">
@@ -51,7 +52,9 @@
 	        <h4 class="modal-title">Can you be more specific?</h4>
 	      </div>
 	      <div class="modal-body">
-	        <p>Your query for {{ company }} didn't exactly match a company name in Glassdoor.  Did you mean one of these?</p>
+	        <p>Your query for {{ company }} didn't exactly match a company name in Glassdoor.  Did you mean one of these?
+	        <form><form>
+	        </p>
 	      </div>
 	      <div class="modal-footer">
 	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
