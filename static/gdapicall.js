@@ -40,7 +40,7 @@
 function clarifyQuery(company, gdAPIData) {
 	$('#queryNoMatchModal').modal('show');
 	console.log("search query not an exact match for " + company);
-	console.log(" testing" + company + gdAPIData);
+	console.log(" testing " + company + gdAPIData[1]);
 };
 
 

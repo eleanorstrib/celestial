@@ -53,8 +53,8 @@
 	      <div class="modal-body">
 	        <p>Your query for {{ coName }} wasn't an exact match with any company in the Glassdoor API.<br />
 	        Please select one of the companies below to continue your search.</p>
-	       <form class="form-control" name="clarifyQueryForm" ng-repeat="(name, employer) in gdAPIData">
-	        	<input type="radio" name="company-clarified" ng-model="employer.name">&nbsp&nbsp{{employer.name}}
+	       <form name="clarifyQueryForm" ng-repeat="(name, employer) in gdAPIData">
+	        	<input type="radio" ng-model="employer.name" ng-value="employer.name">&nbsp&nbsp{{employer.name}}
 	        </form>
 	        </p>
 	      </div>
